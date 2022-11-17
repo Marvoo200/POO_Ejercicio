@@ -1,41 +1,44 @@
-//colo
+
 //Armando Lopez Silva
 //Brandon Omar Ortiz Gutierrez
 //Omar Pedraza Diaz
 //Toribio Cortes Marvin Nahum
 
-
+//Este es el link de github: https://github.com/Marvoo200/POO_Ejercicio.git
 
 package Ejercicio1;
 import java.util.Scanner;
 
 public class Inicio {
 
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) throws Exception{
         Scanner leer = new Scanner(System.in);
-        String numero[] = {"0", "0", "0", "0"};
+        String n1, n2, n3, n4;
         
-        for(int i=0; i<4; i++){
-            System.out.println("Ingresa un numero: ");
-            numero[i] = leer.nextLine();
-            
-        }
+        System.out.println("Ingresa el primer numero: ");
+        n1 = leer.nextLine();
+        System.out.println("Ingresa el segundo numero: ");
+        n2 = leer.nextLine();
+        System.out.println("Ingresa el tercer numero: ");
+        n3 = leer.nextLine();
+        System.out.println("Ingresa el cuarto numero: ");
+        n4 = leer.nextLine();
+
+        Ordenar num = new Ordenar();
         
-        try{
 
-            Ordenar num = new Ordenar();
+       num.ordenar(n1, n2, n3, n4);
+        
+        
 
-            System.out.println("Los numeros ordenados son: "+ num.ordenar(numero)); 
-            
+         
+        
+
             
             
        
-        } catch (Exception e){
-            System.out.println("Ocurrió un error: ");
-            e.printStackTrace(System.out);
-
-        }  
       leer.close();
-    }       
+            
+    }
 }
+
