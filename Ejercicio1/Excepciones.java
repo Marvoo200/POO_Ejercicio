@@ -1,6 +1,5 @@
-// Ya no se utiliza
 
-/*package Ejercicio1;
+package Ejercicio1;
 public class Excepciones extends Exception{
 
     public Excepciones (String mensaje){
@@ -9,4 +8,4 @@ public class Excepciones extends Exception{
 
     }
     
-}*/
+}
