@@ -5,39 +5,24 @@
 //Toribio Cortes Marvin Nahum
 
 //Este es el link de github: https://github.com/Marvoo200/POO_Ejercicio.git
-
 package Ejercicio1;
-import java.util.Scanner;
+
 
 public class Inicio {
 
-    public static void main(String[] args) throws Exception{
-        Scanner leer = new Scanner(System.in);
-        String n1, n2, n3, n4;
+    public static void main(String[] args) throws Excepcion {
         
-        System.out.println("Ingresa el primer numero: ");
-        n1 = leer.nextLine();
-        System.out.println("Ingresa el segundo numero: ");
-        n2 = leer.nextLine();
-        System.out.println("Ingresa el tercer numero: ");
-        n3 = leer.nextLine();
-        System.out.println("Ingresa el cuarto numero: ");
-        n4 = leer.nextLine();
+        int numeros[] = new int[5];
+        
 
         Ordenar num = new Ordenar();
+        numeros = num.ingresar_numeros(); //ingresamos numeros
+        num.ordenar(numeros); //ordenamos los numeros
+
+        
         
 
-       num.ordenar(n1, n2, n3, n4);
-        
-        
 
-         
-        
-
-            
-            
-       
-      leer.close();
             
     }
 }
