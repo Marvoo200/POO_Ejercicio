@@ -1,69 +1,69 @@
 package Ejercicio1;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 
 public class Ordenar {
 
-    public int[] ordenar(String numero1, String numero2, String numero3, String numero4) throws Exception{
-        
-        int n[] ={0, 0, 0, 0};
-        int g[] = {10, 10, 10, 10 };
-        int f = 0;
-        
-        String a[] ={numero1, numero2, numero3, numero4};
-        
-            try {
-                
-                
-                for(int i=0; i<4; i++){
-                    if(Integer.parseInt(a[i]) != 0){
-                        n[f] =Integer.parseInt(a[i]);
-                        f++;
-                    }else{
-                        g[i] = 1;
-                    }
-                }
-                Arrays.sort(n);
-    
-            }  catch (NumberFormatException e) {
-    
-                System.out.println("\nUno de los números ingresados no es valido.\n");
-    
-            }
-            finally{
-                // f = 0;
-                // for(int i=0; i<4; i++){
-                    
-                //     if(g[i] != 1){
-                //         n[f] =Integer.parseInt(a[i]);
-                //         f++;
-                //     }else{
 
-                //     }
-                    
-                // }
-                Arrays.sort(n);
+    public int[] ingresar_numeros() {
+        Scanner leer = new Scanner(System.in);
+        String n[] = new String[5];
+        int numeros[] = new int[5];
+        boolean salida = true;
+        int i = 0;
+        try {
+            //leer datos de entrada
+            while(salida){
+                System.out.printf("\nIngresa un número(%d): ", i+1);
+                n[i] = leer.nextLine();
+                if(isNumeric(n[i]) == true){
+                    i++; //si es un numero continuar para ingresar el otro
+                }else{
+                    System.out.printf("\tNo se está ingresando un numero");
+                }
                 
-                System.out.println("Los numeros ordenados son: ");
-                for(int i=0; i< f; i++){
-                    
-                    System.out.print(" "+n[i]);
-                   
-                       
+                if(i == 4){
+                    salida = false;
                 }
             }
-        
-        
 
+        }  catch (NumberFormatException e) {
+            System.out.println("\nUno de los números ingresados no es valido.\n");
+
+        }finally{
+            //cambiamos el texto a numeros
+            for(i = 0; i<4; i++){
+                numeros[i] = Integer.parseInt(n[i]);
+            }
+            
+        }
+
+        leer.close(); //cerramos Scann
+        return numeros; //enviamos los numeros ordenados en formato entero
+
+    }
+
+
+
+    public void ordenar(int[] numeros){
         
-             
-    
-                   
-        return n;
+        
+        Arrays.sort(numeros);//ordenamos los numeros de menor a mayor
+        System.out.println("Los numeros ordenados son: ");
+        for(int i=1; i<= 4; i++){           
+            System.out.print(" "+numeros[i]);      
+        }
+    }
+
+    private boolean isNumeric(String cadena){ //validamos que se ingresen números
+        try {
+            Integer.parseInt(cadena);
+            return true;
+        } catch (NumberFormatException nfe){
+            return false;
+        }
     }
     
 }
-
-
-
